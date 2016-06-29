@@ -8,22 +8,29 @@ import {
   View
 } from 'react-native';
 
-var SuperID = require('react-native').NativeModules.SuperIDRN;
-SuperID.addEvent('Birthday Party', '4 Privet Drive, Surrey');
+const SuperID = require('react-native').NativeModules.SuperIDRN;
+SuperID.setDebugMode(true);
+SuperID.registerApp('EKsrdtS3p67n4hAGtqUx2dpO', 'bgUip4gieeBYoLJnI9beN5XK');
 
 class SimpleApp extends Component {
+
+  constructor(props) {
+    super(props);
+  
+    this.state = {};
+    SuperID.getVersion().then((ret) => {
+      this.setState({version: `version: ${ret.version} build: ${ret.build}`});
+    }).catch(console.log);
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to SuperID React Native!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+          {this.state.version}
         </Text>
       </View>
     );

@@ -353,6 +353,7 @@
 			baseConfigurationReference = F1F272B441E71E0AC93991F4 /* Pods-SuperID-RN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "SuperID-RN/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.ReactNativeSuperID;
@@ -365,6 +366,7 @@
 			baseConfigurationReference = 3420B9D173A11E2F3D6C14C4 /* Pods-SuperID-RN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "SuperID-RN/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.ReactNativeSuperID;

@@ -9,6 +9,7 @@ PODS:
     - React/Core
   - React/RCTWebSocket (0.28.0):
     - React/Core
+  - SuperID (1.6.7.1)
 
 DEPENDENCIES:
   - React/Core (from `../node_modules/react-native`)
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - React/RCTNetwork (from `../node_modules/react-native`)
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
+  - SuperID
 
 EXTERNAL SOURCES:
   React:
@@ -23,7 +25,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   React: 43544faed4af6a0e8fbc4b3abd26141ed654fa49
+  SuperID: b468d1561bca3b899c8cdf39062f0f8f2d65be8b
 
-PODFILE CHECKSUM: 5071b01f1642f3358a3066a4264dad9c945e1b77
+PODFILE CHECKSUM: fec44f5bf30bde21103a3e9662bf3622fd538ff6
 
 COCOAPODS: 1.0.1

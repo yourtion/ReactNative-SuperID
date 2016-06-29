@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "RCTBridgeModule.h"
+#import "SuperID.h"
 
-@interface SuperIDRN : NSObject <RCTBridgeModule>
+@interface SuperIDRN : NSObject <RCTBridgeModule, SuperIDDelegate>
 
 @end
