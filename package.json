@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "(JS_DIR=`pwd`/ReactComponent; cd node_modules/react-native; npm run start -- --root $JS_DIR)",
-    "init" : "cd iOS && pod install",
-    "test" : "echo \"Error: no test specified\" && exit 1"
+    "init": "cd iOS && pod install",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Yourtion <yourtion@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "react": "^15.1.0",
     "react-native": "^0.28.0"
   }
 }
