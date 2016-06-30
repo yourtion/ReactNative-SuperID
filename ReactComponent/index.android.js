@@ -10,6 +10,7 @@ import {
 
 const superID = require('react-native').NativeModules.SuperIDRN;
 superID.debug(true);
+superID.registe('EKsrdtS3p67n4hAGtqUx2dpO', 'bgUip4gieeBYoLJnI9beN5XK');
 
 class SimpleApp extends Component {
 

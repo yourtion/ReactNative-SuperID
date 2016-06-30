@@ -18,33 +18,32 @@ import com.isnc.facesdk.common.SDKConfig;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Yourtion on 6/30/16.
  */
 public class SuperIDRN extends ReactContextBaseJavaModule {
 
-    private static final String DURATION_SHORT_KEY = "SHORT";
-    private static final String DURATION_LONG_KEY = "LONG";
+    private boolean isRuning;
+    private boolean isRegisted;
+    private Promise mPromise;
 
     public SuperIDRN(ReactApplicationContext reactContext) {
         super(reactContext);
+        isRuning = false;
+        isRegisted = false;
+    }
+
+    private void cleanRuning () {
+        isRuning = false;
+        isRegisted = false;
+        mPromise = null;
     }
 
     @Override
     public String getName() {
         return "SuperIDRN";
-    }
-
-    @Override
-    public Map<String, Object> getConstants() {
-        final Map<String, Object> constants = new HashMap<>();
-        constants.put(DURATION_SHORT_KEY, Toast.LENGTH_SHORT);
-        constants.put(DURATION_LONG_KEY, Toast.LENGTH_LONG);
-        return constants;
     }
 
     @ReactMethod
@@ -54,11 +53,17 @@ public class SuperIDRN extends ReactContextBaseJavaModule {
         map.putString("version", SDKConfig.SDKVERSIONV);
         promise.resolve(map);
     }
+
     @ReactMethod
     public void debug(boolean debug) {
         SuperID.setDebugMode(debug);
     }
-    
+
+    @ReactMethod
+    public void registe(String appId, String appSecret) {
+        SuperID.initFaceSDK(getReactApplicationContext(), appId, appSecret);
+    }
+
     @ReactMethod
     public void show(String message, int duration) {
         Toast.makeText(getReactApplicationContext(), message, duration).show();
