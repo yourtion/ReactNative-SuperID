@@ -5,12 +5,14 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableHighlight,
+  ToastAndroid
 } from 'react-native';
 
-const SuperID = require('react-native').NativeModules.SuperIDRN;
-SuperID.setDebugMode(true);
-SuperID.registerApp('EKsrdtS3p67n4hAGtqUx2dpO', 'bgUip4gieeBYoLJnI9beN5XK');
+const superID = require('react-native').NativeModules.SuperIDRN;
+superID.debug(true);
+superID.registe('EKsrdtS3p67n4hAGtqUx2dpO', 'bgUip4gieeBYoLJnI9beN5XK');
 
 class SimpleApp extends Component {
 
@@ -18,9 +20,33 @@ class SimpleApp extends Component {
     super(props);
   
     this.state = {};
-    SuperID.getVersion().then((ret) => {
+    superID.version().then((ret) => {
       this.setState({version: `version: ${ret.version} build: ${ret.build}`});
     }).catch(console.log);
+    
+  }
+
+  async _login() {
+    try {
+      const ret = await superID.login();
+      if (ret !== null){
+        this.setState({info: `User: ${ret.userInfo.name}  Phone: ${ret.userInfo.phone}`});
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async _verify() {
+    try {
+      const ret = await superID.verify(1);
+      if (ret !== null){
+        const result = ret === 0 ? 'Verify Succeed!' : 'Verify Fail !'
+        this.setState({info: result});
+      }
+    } catch (error) {
+      this.setState({info: 'Please Login first!'});
+    }
   }
 
   render() {
@@ -32,6 +58,20 @@ class SimpleApp extends Component {
         <Text style={styles.instructions}>
           {this.state.version}
         </Text>
+        <Text style={styles.instructions}>
+          {this.state.info}
+        </Text>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this._login.bind(this)}>
+          <Text style={styles.buttonText}>Login</Text>
+        </TouchableHighlight>
+
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this._verify.bind(this)}>
+          <Text style={styles.buttonText}>Verify</Text>
+        </TouchableHighlight>
       </View>
     );
   }
@@ -53,6 +93,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  button: {
+    margin: 5,
   },
 });
 
