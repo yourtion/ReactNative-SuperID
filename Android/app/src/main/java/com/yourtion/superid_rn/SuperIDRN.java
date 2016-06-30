@@ -4,12 +4,17 @@ package com.yourtion.superid_rn;
 import android.widget.Toast;
 
 import com.facebook.react.ReactPackage;
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.uimanager.ViewManager;
+import com.isnc.facesdk.SuperID;
+import com.isnc.facesdk.common.SDKConfig;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,6 +47,18 @@ public class SuperIDRN extends ReactContextBaseJavaModule {
         return constants;
     }
 
+    @ReactMethod
+    public void version(Promise promise) {
+        WritableMap map = Arguments.createMap();
+        map.putString("build", SDKConfig.SDKVERSION);
+        map.putString("version", SDKConfig.SDKVERSIONV);
+        promise.resolve(map);
+    }
+    @ReactMethod
+    public void debug(boolean debug) {
+        SuperID.setDebugMode(debug);
+    }
+    
     @ReactMethod
     public void show(String message, int duration) {
         Toast.makeText(getReactApplicationContext(), message, duration).show();

@@ -9,7 +9,7 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.List;
 
-public class SuperID extends ReactActivity {
+public class SuperIDRNActivity extends ReactActivity {
 
     private ReactRootView mReactRootView;
     private ReactInstanceManager mReactInstanceManager;
@@ -17,7 +17,7 @@ public class SuperID extends ReactActivity {
 
     @Override
     protected String getMainComponentName() {
-        return "MyAwesomeApp";
+        return "SimpleApp";
     }
 
     @Override
