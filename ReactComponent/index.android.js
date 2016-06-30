@@ -8,7 +8,18 @@ import {
   View,
 } from 'react-native';
 
+const superID = require('react-native').NativeModules.SuperIDRN;
+console.log(superID);
+
 class MyAwesomeApp extends Component {
+
+  constructor(props) {
+    super(props);
+  
+    this.state = {};
+    superID.show('Awesome', superID.SHORT);
+  }
+
   render() {
     return (
       <View style={styles.container}>
