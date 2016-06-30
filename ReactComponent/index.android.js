@@ -6,6 +6,7 @@ import {
   Text,
   StyleSheet,
   View,
+  TouchableHighlight,
 } from 'react-native';
 
 const superID = require('react-native').NativeModules.SuperIDRN;
@@ -18,11 +19,34 @@ class SimpleApp extends Component {
     super(props);
   
     this.state = {};
-    superID.show('Awesome', superID.SHORT);
     superID.version().then((ret) => {
       console.log(ret);
       this.setState({version: `version: ${ret.version} build: ${ret.build}`});
     }).catch(console.log);
+  }
+
+
+  async _login() {
+    try {
+      const ret = await superID.login();
+      if (ret !== null){
+        this.setState({info: `User: ${ret.userInfo.name}  Phone: ${ret.userInfo.phone}`});
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async _verify() {
+    try {
+      const ret = await superID.verify(1);
+      if (ret !== null){
+        const result = ret === 0 ? 'Verify Succeed!' : 'Verify Fail !'
+        this.setState({info: result});
+      }
+    } catch (error) {
+      this.setState({info: 'Please Login first!'});
+    }
   }
 
   render() {
@@ -37,6 +61,18 @@ class SimpleApp extends Component {
         <Text style={styles.instructions}>
           {this.state.info}
         </Text>
+
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this._login.bind(this)}>
+          <Text style={styles.buttonText}>Login</Text>
+        </TouchableHighlight>
+
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this._verify.bind(this)}>
+          <Text style={styles.buttonText}>Verify</Text>
+        </TouchableHighlight>
       </View>
     )
   }
@@ -57,6 +93,9 @@ var styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  button: {
+    margin: 5,
   },
 });
 
