@@ -41,7 +41,7 @@ class SimpleApp extends Component {
     try {
       const ret = await superID.verify(1);
       if (ret !== null){
-        const result = ret === 0 ? 'Verify Succeed!' : 'Verify Fail !'
+        const result = ret ? 'Verify Succeed!' : 'Verify Fail !'
         this.setState({info: result});
       }
     } catch (error) {

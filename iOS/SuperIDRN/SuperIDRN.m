@@ -100,6 +100,11 @@ RCT_REMAP_METHOD(login,
     
 }
 
+RCT_EXPORT_METHOD(logout)
+{
+    [[SuperID sharedInstance] appUserLogoutCurrentAccount];
+}
+
 RCT_REMAP_METHOD(verify,
                  obtainVerifyViewWithRetryCount:(nonnull NSNumber *)count resolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject)
@@ -120,6 +125,46 @@ RCT_REMAP_METHOD(verify,
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [[self rootController] presentViewController:verifyView animated:YES completion:nil];
+    });
+    
+}
+
+RCT_REMAP_METHOD(faceFeature,
+                 obtainFaceFeatureViewResolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    if (![self checkStatus:reject]) return;
+    
+    _isRuning = YES;
+    
+    NSError *error;
+    id faceFeatureView = [[SuperID sharedInstance] obtainFaceFeatureViewControllerWithError:&error];
+    if (error) {
+        [self cleanRuning];
+        return reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, error);
+    }
+    
+    _resolve = resolve;
+    _reject = reject;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[self rootController] presentViewController:faceFeatureView animated:YES completion:nil];
+    });
+    
+}
+
+RCT_REMAP_METHOD(authState,
+                 queryCurrentUserAuthorizationState:(NSString *)openId resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    if (![self checkStatus:reject]) return;
+    
+    _isRuning = YES;
+    _resolve = resolve;
+    _reject = reject;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[SuperID sharedInstance] queryCurrentUserAuthorizationStateWithOpenId:openId];
     });
     
 }
@@ -150,7 +195,12 @@ RCT_REMAP_METHOD(verify,
  *  @param error  解除授权成功为nil，解除授权失败不为nil。
  */
 - (void)superID:(SuperID *)sender userDidFinishCancelAuthorization:(NSError *)error {
-    
+    if (_isRuning && _resolve && _reject) {
+        if (error) {
+            _reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, error);
+        }
+        [self cleanRuning];
+    }
 }
 
 /**
@@ -159,8 +209,15 @@ RCT_REMAP_METHOD(verify,
  *  @param featureInfo 用户的人脸信息内容
  *  @param error       获取成功为nil， 获取不成功不为nil。错误信息通知，开发者可根据错误描述判断错误情况。详见Demo或开发者文档
  */
-- (void)superID:(SuperID *)sender userDidFinishGetFaceFeatureWithFeatureInfo:(NSDictionary *) featureInfo error:(NSError *)error {
-    
+- (void)superID:(SuperID *)sender userDidFinishGetFaceFeatureWithFeatureInfo:(NSDictionary *)featureInfo error:(NSError *)error {
+    if (_isRuning && _resolve && _reject) {
+        if (error) {
+            _reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, error);
+        } else {
+            _resolve(featureInfo);
+        }
+        [self cleanRuning];
+    }
 }
 
 /**
@@ -169,7 +226,17 @@ RCT_REMAP_METHOD(verify,
  *  @param state  SIDUserAuthorizationState的类型参数，用于状态进行定位
  */
 - (void)superID:(SuperID *)sender queryCurrentUserAuthorizationStateResponse:(SIDUserAuthorizationState)state {
-    
+    if (_isRuning && _resolve && _reject) {
+        if (state == SIDUserHasAuth) {
+            _resolve(@YES);
+        } else if (state == SIDUserNoAuth) {
+            _resolve(@NO);
+        } else {
+            NSError *err = [NSError errorWithDomain:@"SuperID" code:-3 userInfo:nil];
+            _reject(@"Check authorization fail", @"Please try again", err);
+        }
+        [self cleanRuning];
+    }
 }
 
 /**
@@ -178,7 +245,17 @@ RCT_REMAP_METHOD(verify,
  *  @param state SIDUserUpdateResponseState类型参数，用户状态定位
  */
 - (void)superID:(SuperID *)sender updateAppUserInfoStateResponse:(SIDUserUpdateResponseState)state {
-    
+    if (_isRuning && _resolve && _reject) {
+        if (state == SIDUpdateUserInfoSucceed || state == SIDUpdateAppUidSucceed) {
+            _resolve(@YES);
+        } else if (state == SIDUpdateAppUserInfoFail || state == SIDUpdateAppUidFail) {
+            _resolve(@NO);
+        } else {
+            NSError *err = [NSError errorWithDomain:@"SuperID" code:-3 userInfo:nil];
+            _reject(@"update AppUserInfo fail", @"Please try again", err);
+        }
+        [self cleanRuning];
+    }
 }
 
 /**
@@ -189,9 +266,9 @@ RCT_REMAP_METHOD(verify,
 - (void)superID:(SuperID *)sender faceVerifyResponse:(SIDFACEVerifyState)state {
     if (_isRuning && _resolve && _reject) {
         if (state == SIDFaceVerifySucceed) {
-            _resolve(@0);
+            _resolve(@YES);
         } else {
-            _resolve(@1);
+            _resolve(@NO);
         }
         [self cleanRuning];
     }
