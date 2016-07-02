@@ -37,13 +37,11 @@ RCT_EXPORT_MODULE();
 
 -(BOOL)checkStatus:(RCTPromiseRejectBlock)reject {
     if (!_isRegisted) {
-        NSError *err = [NSError errorWithDomain:@"SuperID" code:-1 userInfo:nil];
-        reject(@"not register", @"Please RegisterApp First", err);
+        reject(@"not register", @"Please RegisterApp First", nil);
         return NO;
     }
     if (_isRuning) {
-        NSError *err = [NSError errorWithDomain:@"SuperID" code:-2 userInfo:nil];
-        reject(@"meathd is runing", @"Please wait", err);
+        reject(@"meathd is runing", @"Please wait", nil);
         return NO;
     }
     return YES;
@@ -88,7 +86,7 @@ RCT_REMAP_METHOD(login,
     id loginView = [[SuperID sharedInstance] obtainLoginViewControllerWithError:&error];
     if (error) {
         [self cleanRuning];
-        return reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, error);
+        return reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, nil);
     }
     
     _resolve = resolve;
@@ -117,7 +115,7 @@ RCT_REMAP_METHOD(verify,
     id verifyView = [[SuperID sharedInstance] obtainFaceVerifyViewControllerWithRetryCount:count error:&error];
     if (error) {
         [self cleanRuning];
-        return reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, error);
+        return reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, nil);
     }
     
     _resolve = resolve;
@@ -141,7 +139,7 @@ RCT_REMAP_METHOD(faceFeature,
     id faceFeatureView = [[SuperID sharedInstance] obtainFaceFeatureViewControllerWithError:&error];
     if (error) {
         [self cleanRuning];
-        return reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, error);
+        return reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, nil);
     }
     
     _resolve = resolve;
@@ -181,7 +179,7 @@ RCT_REMAP_METHOD(authState,
 - (void)superID:(SuperID *)sender userDidFinishLoginWithUserInfo:(NSDictionary *)userInfo withOpenId:(NSString *)openId error:(NSError *)error {
     if (_isRuning && _resolve && _reject) {
         if (error) {
-            _reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, error);
+            _reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, nil);
         } else {
             _resolve(@{@"openId": openId, @"userInfo": userInfo});
         }
@@ -197,7 +195,7 @@ RCT_REMAP_METHOD(authState,
 - (void)superID:(SuperID *)sender userDidFinishCancelAuthorization:(NSError *)error {
     if (_isRuning && _resolve && _reject) {
         if (error) {
-            _reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, error);
+            _reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, nil);
         }
         [self cleanRuning];
     }
@@ -212,7 +210,7 @@ RCT_REMAP_METHOD(authState,
 - (void)superID:(SuperID *)sender userDidFinishGetFaceFeatureWithFeatureInfo:(NSDictionary *)featureInfo error:(NSError *)error {
     if (_isRuning && _resolve && _reject) {
         if (error) {
-            _reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, error);
+            _reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, nil);
         } else {
             _resolve(featureInfo);
         }
@@ -232,8 +230,7 @@ RCT_REMAP_METHOD(authState,
         } else if (state == SIDUserNoAuth) {
             _resolve(@NO);
         } else {
-            NSError *err = [NSError errorWithDomain:@"SuperID" code:-3 userInfo:nil];
-            _reject(@"Check authorization fail", @"Please try again", err);
+            _reject(@"Check authorization fail", @"Please try again", nil);
         }
         [self cleanRuning];
     }
@@ -251,8 +248,7 @@ RCT_REMAP_METHOD(authState,
         } else if (state == SIDUpdateAppUserInfoFail || state == SIDUpdateAppUidFail) {
             _resolve(@NO);
         } else {
-            NSError *err = [NSError errorWithDomain:@"SuperID" code:-3 userInfo:nil];
-            _reject(@"update AppUserInfo fail", @"Please try again", err);
+            _reject(@"update AppUserInfo fail", @"Please try again", nil);
         }
         [self cleanRuning];
     }
