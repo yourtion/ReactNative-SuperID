@@ -100,11 +100,33 @@ public class SuperIDRN extends ReactContextBaseJavaModule implements ActivityEve
     }
 
     @ReactMethod
+    public void logout() {
+        Activity activity = getCurrentActivity();
+        if (activity != null) {
+            SuperID.faceLogout(activity);
+        }
+    }
+
+    @ReactMethod
     public void verify(int count, Promise promise) {
         if (!checkStatus(promise)) return;
         Activity activity = getCurrentActivity();
         if (activity != null) {
             SuperID.faceVerify(activity, count);
+            isRunning = true;
+            mPromise = promise;
+        } else {
+            promise.reject("error", "Activity is null");
+        }
+
+    }
+
+    @ReactMethod
+    public void faceFeature(Promise promise) {
+        if (!checkStatus(promise)) return;
+        Activity activity = getCurrentActivity();
+        if (activity != null) {
+            SuperID.getFaceFeatures(activity);
             isRunning = true;
             mPromise = promise;
         } else {
@@ -134,6 +156,18 @@ public class SuperIDRN extends ReactContextBaseJavaModule implements ActivityEve
 
                     break;
 
+                case SDKConfig.GETEMOTIONRESULT:
+                    try {
+                        String featureInfo = intent.getStringExtra(SDKConfig.FACEDATA);
+                        JSONObject info = new JSONObject(featureInfo);
+                        WritableMap infoMap = JsonConvert.jsonToReact(info);
+                        mPromise.resolve(infoMap);
+                    } catch (Exception e) {
+                        mPromise.reject("error", "JSON parse error");
+                    }
+
+                    break;
+
                 case SDKConfig.VERIFY_SUCCESS:
                     mPromise.resolve(true);
                     break;
@@ -150,7 +184,7 @@ public class SuperIDRN extends ReactContextBaseJavaModule implements ActivityEve
                     break;
 
                 default:
-                    mPromise.reject("fail", "Activity Result Fail");
+                    mPromise.reject("fail", "Result Fail");
                     break;
             }
             cleanRunning();
