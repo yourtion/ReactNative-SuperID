@@ -3,10 +3,11 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  Text,
   StyleSheet,
+  Text,
   View,
   TouchableHighlight,
+  ToastAndroid
 } from 'react-native';
 
 const superID = require('react-native').NativeModules.SuperIDRN;
@@ -20,16 +21,15 @@ class SimpleApp extends Component {
   
     this.state = {};
     superID.version().then((ret) => {
-      console.log(ret);
       this.setState({version: `version: ${ret.version} build: ${ret.build}`});
     }).catch(console.log);
+    
   }
-
 
   async _login() {
     try {
       const ret = await superID.login();
-      if (ret !== null){
+      if (ret !== null) {
         this.setState({info: `User: ${ret.userInfo.name}  Phone: ${ret.userInfo.phone}`});
       }
     } catch (error) {
@@ -40,12 +40,26 @@ class SimpleApp extends Component {
   async _verify() {
     try {
       const ret = await superID.verify(1);
-      if (ret !== null){
-        const result = ret === 0 ? 'Verify Succeed!' : 'Verify Fail !'
+      if (ret !== null) {
+        const result = ret ? 'Verify Succeed!' : 'Verify Fail !'
         this.setState({info: result});
       }
     } catch (error) {
       this.setState({info: 'Please Login first!'});
+    }
+  }
+
+  async _faceFeature() {
+    try {
+      const ret = await superID.faceFeature();
+      if (ret !== null) {
+        console.log(ret);
+        const sex = ret.male.result === 1 ? "male" : "female";
+        const attractive = parseInt(ret.attractive.score * 100, 10);
+        this.setState({info: `Age: ${ret.age}  Sex: ${sex}  Attractive: ${attractive}`});
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -62,22 +76,31 @@ class SimpleApp extends Component {
           {this.state.info}
         </Text>
 
-        <TouchableHighlight
-          style={styles.button}
-          onPress={this._login.bind(this)}>
-          <Text style={styles.buttonText}>Login</Text>
-        </TouchableHighlight>
+          <View style={styles.box}>
+            <TouchableHighlight
+              style={styles.button}
+              onPress={this._login.bind(this)}>
+              <Text style={styles.buttonText}>Login</Text>
+            </TouchableHighlight>
 
-        <TouchableHighlight
-          style={styles.button}
-          onPress={this._verify.bind(this)}>
-          <Text style={styles.buttonText}>Verify</Text>
-        </TouchableHighlight>
+            <TouchableHighlight
+              style={styles.button}
+              onPress={this._verify.bind(this)}>
+              <Text style={styles.buttonText}>Verify</Text>
+            </TouchableHighlight>
+
+            <TouchableHighlight
+              style={styles.button}
+              onPress={this._faceFeature.bind(this)}>
+              <Text style={styles.buttonText}>FaceFeature</Text>
+            </TouchableHighlight>
+          </View>
       </View>
-    )
+    );
   }
 }
-var styles = StyleSheet.create({
+
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -94,8 +117,15 @@ var styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  box: {
+    flexDirection:'row',
+  },
   button: {
     margin: 5,
+    padding: 5,
+    borderColor: '#0089ff',
+    borderWidth: 1,
+    borderRadius: 3,
   },
 });
 
