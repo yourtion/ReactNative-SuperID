@@ -3,7 +3,6 @@ package com.yourtion.superid_rn;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.ActivityEventListener;
@@ -30,31 +29,32 @@ import java.util.List;
  * Created by Yourtion on 6/30/16.
  */
 public class SuperIDRN extends ReactContextBaseJavaModule implements ActivityEventListener {
+    public static final String TAG = "com.yourtion.superid.SuperIDRN";
 
-    private boolean isRuning;
+    private boolean isRunning;
     private boolean isRegisted;
     private Promise mPromise;
 
     public SuperIDRN(ReactApplicationContext reactContext) {
         super(reactContext);
         reactContext.addActivityEventListener(this);
-        isRuning = false;
+        isRunning = false;
         isRegisted = false;
         mPromise = null;
     }
 
     private void cleanRunning() {
-        isRuning = false;
+        isRunning = false;
         mPromise = null;
     }
 
     private boolean checkStatus(Promise promise) {
         if (!isRegisted) {
-            promise.reject("not register", "Please RegisterApp First");
+            promise.reject("error", "Please RegisterApp First");
             return false;
         }
-        if (isRuning) {
-            promise.reject("meathd is runing", "Please wait");
+        if (isRunning) {
+            promise.reject("error", "Method is running. Please wait");
             return false;
         }
         return true;
@@ -91,10 +91,10 @@ public class SuperIDRN extends ReactContextBaseJavaModule implements ActivityEve
         Activity activity = getCurrentActivity();
         if (activity != null) {
             SuperID.faceLogin(activity);
-            isRuning = true;
+            isRunning = true;
             mPromise = promise;
         } else {
-            promise.reject("-2", "Activity is null");
+            promise.reject("error", "Activity is null");
         }
 
     }
@@ -105,45 +105,52 @@ public class SuperIDRN extends ReactContextBaseJavaModule implements ActivityEve
         Activity activity = getCurrentActivity();
         if (activity != null) {
             SuperID.faceVerify(activity, count);
-            isRuning = true;
+            isRunning = true;
             mPromise = promise;
         } else {
-            promise.reject("-2", "Activity is null");
+            promise.reject("error", "Activity is null");
         }
 
     }
 
     @Override
     public void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
-        if (isRuning && mPromise != null) {
+        if (isRunning && mPromise != null) {
             switch (resultCode) {
                 case SDKConfig.AUTH_SUCCESS:
                 case SDKConfig.LOGINSUCCESS:
-                    String openid = Cache.getCached(getReactApplicationContext(), SDKConfig.KEY_OPENID);
-                    String userInfo = Cache.getCached(getReactApplicationContext(), SDKConfig.KEY_APPINFO);
                     try {
+                        String openid = Cache.getCached(getReactApplicationContext(), SDKConfig.KEY_OPENID);
+                        String userInfo = Cache.getCached(getReactApplicationContext(), SDKConfig.KEY_APPINFO);
                         JSONObject info = new JSONObject(userInfo);
                         WritableMap infoMap = JsonConvert.jsonToReact(info);
                         WritableMap map = Arguments.createMap();
                         map.putString("openId", openid);
                         map.putMap("userInfo", infoMap);
                         mPromise.resolve(map);
-
                     } catch (Exception e) {
-                        Log.e("aaaa", e.toString());
-                        mPromise.reject("-1", "JSON err");
+                        mPromise.reject("error", "JSON parse error");
                     }
 
                     break;
+
                 case SDKConfig.VERIFY_SUCCESS:
-                    mPromise.resolve(0);
+                    mPromise.resolve(true);
                     break;
+
                 case SDKConfig.VERIFY_FAIL:
-                    mPromise.resolve(1);
+                    mPromise.resolve(false);
+                    break;
+
+                case SDKConfig.PHONECODE_ERROR:
+                case SDKConfig.ACCESSTOKENERROR:
+                case SDKConfig.APPTOKENERROR:
+                case SDKConfig.OTHER_ERROR:
+                    mPromise.reject("error", "Error: " + Integer.toString(resultCode));
                     break;
 
                 default:
-                    mPromise.reject("-1", "Fail");
+                    mPromise.reject("fail", "Activity Result Fail");
                     break;
             }
             cleanRunning();

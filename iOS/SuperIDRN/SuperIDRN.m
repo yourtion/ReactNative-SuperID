@@ -10,6 +10,10 @@
 #import "RCTLog.h"
 #import "RCTConvert.h"
 
+#define EC_ERROR @"error"
+#define EC_FAIL @"fail"
+#define EM_NOTREG @"Please RegisterApp First"
+#define EM_RUNNING @"Method is running. Please wait"
 
 @implementation SuperIDRN
 {
@@ -37,11 +41,11 @@ RCT_EXPORT_MODULE();
 
 -(BOOL)checkStatus:(RCTPromiseRejectBlock)reject {
     if (!_isRegisted) {
-        reject(@"not register", @"Please RegisterApp First", nil);
+        reject(EC_ERROR, EM_NOTREG, nil);
         return NO;
     }
     if (_isRuning) {
-        reject(@"meathd is runing", @"Please wait", nil);
+        reject(EC_ERROR, EM_RUNNING, nil);
         return NO;
     }
     return YES;
@@ -86,7 +90,7 @@ RCT_REMAP_METHOD(login,
     id loginView = [[SuperID sharedInstance] obtainLoginViewControllerWithError:&error];
     if (error) {
         [self cleanRuning];
-        return reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, nil);
+        return reject(EC_ERROR, error.description, nil);
     }
     
     _resolve = resolve;
@@ -115,7 +119,7 @@ RCT_REMAP_METHOD(verify,
     id verifyView = [[SuperID sharedInstance] obtainFaceVerifyViewControllerWithRetryCount:count error:&error];
     if (error) {
         [self cleanRuning];
-        return reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, nil);
+        return reject(EC_ERROR, error.description, nil);
     }
     
     _resolve = resolve;
@@ -139,7 +143,7 @@ RCT_REMAP_METHOD(faceFeature,
     id faceFeatureView = [[SuperID sharedInstance] obtainFaceFeatureViewControllerWithError:&error];
     if (error) {
         [self cleanRuning];
-        return reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, nil);
+        return reject(EC_ERROR, error.description, nil);
     }
     
     _resolve = resolve;
@@ -179,7 +183,7 @@ RCT_REMAP_METHOD(authState,
 - (void)superID:(SuperID *)sender userDidFinishLoginWithUserInfo:(NSDictionary *)userInfo withOpenId:(NSString *)openId error:(NSError *)error {
     if (_isRuning && _resolve && _reject) {
         if (error) {
-            _reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, nil);
+            _reject(EC_ERROR, error.description, nil);
         } else {
             _resolve(@{@"openId": openId, @"userInfo": userInfo});
         }
@@ -195,7 +199,7 @@ RCT_REMAP_METHOD(authState,
 - (void)superID:(SuperID *)sender userDidFinishCancelAuthorization:(NSError *)error {
     if (_isRuning && _resolve && _reject) {
         if (error) {
-            _reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, nil);
+            _reject(EC_ERROR, error.description, nil);
         }
         [self cleanRuning];
     }
@@ -210,7 +214,7 @@ RCT_REMAP_METHOD(authState,
 - (void)superID:(SuperID *)sender userDidFinishGetFaceFeatureWithFeatureInfo:(NSDictionary *)featureInfo error:(NSError *)error {
     if (_isRuning && _resolve && _reject) {
         if (error) {
-            _reject([NSString stringWithFormat:@"%ld", (long)error.code], error.description, nil);
+            _reject(EC_ERROR, error.description, nil);
         } else {
             _resolve(featureInfo);
         }
@@ -230,7 +234,7 @@ RCT_REMAP_METHOD(authState,
         } else if (state == SIDUserNoAuth) {
             _resolve(@NO);
         } else {
-            _reject(@"Check authorization fail", @"Please try again", nil);
+            _reject(EC_FAIL, [NSString stringWithFormat:@"State: %ld .Please try again", (long)state], nil);
         }
         [self cleanRuning];
     }
@@ -248,7 +252,7 @@ RCT_REMAP_METHOD(authState,
         } else if (state == SIDUpdateAppUserInfoFail || state == SIDUpdateAppUidFail) {
             _resolve(@NO);
         } else {
-            _reject(@"update AppUserInfo fail", @"Please try again", nil);
+            _reject(EC_FAIL, [NSString stringWithFormat:@"State: %ld .Please try again", (long)state], nil);
         }
         [self cleanRuning];
     }
