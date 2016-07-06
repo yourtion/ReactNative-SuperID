@@ -1,11 +1,10 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "com.yourtion.superid_rn"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
@@ -20,8 +19,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.facebook.react:react-native:+'
-    compile project(':SuperIDRN')
+    compile 'com.isnc.facesdk:superid-sdk:1.6.3'
 }

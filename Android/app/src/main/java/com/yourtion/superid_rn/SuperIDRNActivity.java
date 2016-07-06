@@ -6,6 +6,8 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.shell.MainReactPackage;
 
+import com.yourtion.SuperIDRN.SIDRNPackage;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,6 +30,6 @@ public class SuperIDRNActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
                 new MainReactPackage(),
-                new SuperIDRNReactPackage());
+                new SIDRNPackage());
     }
 }

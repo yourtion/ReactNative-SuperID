@@ -1,32 +1,23 @@
-package com.yourtion.superid_rn;
-
+package com.yourtion.SuperIDRN;
 
 import android.app.Activity;
 import android.content.Intent;
 
-import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.Arguments;
-import com.facebook.react.bridge.JavaScriptModule;
-import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableMap;
-import com.facebook.react.uimanager.ViewManager;
 import com.isnc.facesdk.SuperID;
 import com.isnc.facesdk.common.Cache;
 import com.isnc.facesdk.common.SDKConfig;
 
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 /**
- * Created by Yourtion on 6/30/16.
+ * Created by Yourtion on 7/5/16.
  */
 public class SuperIDRN extends ReactContextBaseJavaModule implements ActivityEventListener {
     public static final String TAG = "com.yourtion.superid.SuperIDRN";
@@ -145,7 +136,7 @@ public class SuperIDRN extends ReactContextBaseJavaModule implements ActivityEve
                         String openid = Cache.getCached(getReactApplicationContext(), SDKConfig.KEY_OPENID);
                         String userInfo = Cache.getCached(getReactApplicationContext(), SDKConfig.KEY_APPINFO);
                         JSONObject info = new JSONObject(userInfo);
-                        WritableMap infoMap = JsonConvert.jsonToReact(info);
+                        WritableMap infoMap = JSONConvert.jsonToReact(info);
                         WritableMap map = Arguments.createMap();
                         map.putString("openId", openid);
                         map.putMap("userInfo", infoMap);
@@ -160,7 +151,7 @@ public class SuperIDRN extends ReactContextBaseJavaModule implements ActivityEve
                     try {
                         String featureInfo = intent.getStringExtra(SDKConfig.FACEDATA);
                         JSONObject info = new JSONObject(featureInfo);
-                        WritableMap infoMap = JsonConvert.jsonToReact(info);
+                        WritableMap infoMap = JSONConvert.jsonToReact(info);
                         mPromise.resolve(infoMap);
                     } catch (Exception e) {
                         mPromise.reject("error", "JSON parse error");
@@ -189,28 +180,5 @@ public class SuperIDRN extends ReactContextBaseJavaModule implements ActivityEve
             }
             cleanRunning();
         }
-    }
-}
-
-class SuperIDRNReactPackage implements ReactPackage {
-
-    @Override
-    public List<Class<? extends JavaScriptModule>> createJSModules() {
-        return Collections.emptyList();
-    }
-
-    @Override
-    public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-        return Collections.emptyList();
-    }
-
-    @Override
-    public List<NativeModule> createNativeModules(
-            ReactApplicationContext reactContext) {
-        List<NativeModule> modules = new ArrayList<>();
-
-        modules.add(new SuperIDRN(reactContext));
-
-        return modules;
     }
 }
