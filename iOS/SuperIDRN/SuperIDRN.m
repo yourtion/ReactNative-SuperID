@@ -6,9 +6,8 @@
 //  Copyright © 2016 Yourtion. All rights reserved.
 //
 
-#import "SuperIDRN.h"
-#import "RCTLog.h"
 #import "RCTConvert.h"
+#import "SuperIDRN.h"
 
 #define EC_ERROR @"error"
 #define EC_FAIL @"fail"

@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB6EBAB21D2B757C00457795 /* SuperIDRN.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB6EBAB11D2B757C00457795 /* SuperIDRN.h */; };
+		CB6EBAB41D2B757C00457795 /* SuperIDRN.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6EBAB31D2B757C00457795 /* SuperIDRN.m */; };
+		CB6EBB521D2B7EAA00457795 /* libSuperIDSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6EBB4A1D2B7EAA00457795 /* libSuperIDSDK.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CB6EBAAC1D2B757C00457795 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				CB6EBAB21D2B757C00457795 /* SuperIDRN.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CB6EBAAE1D2B757C00457795 /* libSuperIDRN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSuperIDRN.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB6EBAB11D2B757C00457795 /* SuperIDRN.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperIDRN.h; sourceTree = "<group>"; };
+		CB6EBAB31D2B757C00457795 /* SuperIDRN.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperIDRN.m; sourceTree = "<group>"; };
+		CB6EBB4A1D2B7EAA00457795 /* libSuperIDSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuperIDSDK.a; sourceTree = "<group>"; };
+		CB6EBB4B1D2B7EAA00457795 /* SIDCameraPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDCameraPreviewView.h; sourceTree = "<group>"; };
+		CB6EBB4C1D2B7EAA00457795 /* SIDFaceFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDFaceFeatureViewController.h; sourceTree = "<group>"; };
+		CB6EBB4D1D2B7EAA00457795 /* SIDImageFilterCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDImageFilterCommon.h; sourceTree = "<group>"; };
+		CB6EBB4E1D2B7EAA00457795 /* SIDMutilpleCameraManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDMutilpleCameraManagerViewController.h; sourceTree = "<group>"; };
+		CB6EBB4F1D2B7EAA00457795 /* SuperID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperID.h; sourceTree = "<group>"; };
+		CB6EBB501D2B7EAA00457795 /* SuperIDDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIDDelegate.h; sourceTree = "<group>"; };
+		CB6EBB511D2B7EAA00457795 /* SuperIDSDKSettings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SuperIDSDKSettings.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB6EBAAB1D2B757C00457795 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB6EBB521D2B7EAA00457795 /* libSuperIDSDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB6EBAA51D2B757C00457795 = {
+			isa = PBXGroup;
+			children = (
+				CB6EBB491D2B7EAA00457795 /* SuperID-SDK-iOS */,
+				CB6EBAB01D2B757C00457795 /* SuperIDRN */,
+				CB6EBAAF1D2B757C00457795 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB6EBAAF1D2B757C00457795 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB6EBAAE1D2B757C00457795 /* libSuperIDRN.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB6EBAB01D2B757C00457795 /* SuperIDRN */ = {
+			isa = PBXGroup;
+			children = (
+				CB6EBAB11D2B757C00457795 /* SuperIDRN.h */,
+				CB6EBAB31D2B757C00457795 /* SuperIDRN.m */,
+			);
+			path = SuperIDRN;
+			sourceTree = "<group>";
+		};
+		CB6EBB491D2B7EAA00457795 /* SuperID-SDK-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB6EBB4A1D2B7EAA00457795 /* libSuperIDSDK.a */,
+				CB6EBB4B1D2B7EAA00457795 /* SIDCameraPreviewView.h */,
+				CB6EBB4C1D2B7EAA00457795 /* SIDFaceFeatureViewController.h */,
+				CB6EBB4D1D2B7EAA00457795 /* SIDImageFilterCommon.h */,
+				CB6EBB4E1D2B7EAA00457795 /* SIDMutilpleCameraManagerViewController.h */,
+				CB6EBB4F1D2B7EAA00457795 /* SuperID.h */,
+				CB6EBB501D2B7EAA00457795 /* SuperIDDelegate.h */,
+				CB6EBB511D2B7EAA00457795 /* SuperIDSDKSettings.bundle */,
+			);
+			name = "SuperID-SDK-iOS";
+			path = "SuperIDRN/SuperID-SDK-iOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB6EBAAD1D2B757C00457795 /* SuperIDRN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB6EBAB71D2B757C00457795 /* Build configuration list for PBXNativeTarget "SuperIDRN" */;
+			buildPhases = (
+				CB6EBAAA1D2B757C00457795 /* Sources */,
+				CB6EBAAB1D2B757C00457795 /* Frameworks */,
+				CB6EBAAC1D2B757C00457795 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuperIDRN;
+			productName = SuperIDRN;
+			productReference = CB6EBAAE1D2B757C00457795 /* libSuperIDRN.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB6EBAA61D2B757C00457795 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Yourtion;
+				TargetAttributes = {
+					CB6EBAAD1D2B757C00457795 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = CB6EBAA91D2B757C00457795 /* Build configuration list for PBXProject "SuperIDRN" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CB6EBAA51D2B757C00457795;
+			productRefGroup = CB6EBAAF1D2B757C00457795 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB6EBAAD1D2B757C00457795 /* SuperIDRN */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB6EBAAA1D2B757C00457795 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB6EBAB41D2B757C00457795 /* SuperIDRN.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CB6EBAB51D2B757C00457795 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CB6EBAB61D2B757C00457795 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB6EBAB81D2B757C00457795 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../node_modules/react-native/React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SuperIDRN/SuperID-SDK-iOS",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CB6EBAB91D2B757C00457795 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../node_modules/react-native/React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SuperIDRN/SuperID-SDK-iOS",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB6EBAA91D2B757C00457795 /* Build configuration list for PBXProject "SuperIDRN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB6EBAB51D2B757C00457795 /* Debug */,
+				CB6EBAB61D2B757C00457795 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB6EBAB71D2B757C00457795 /* Build configuration list for PBXNativeTarget "SuperIDRN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB6EBAB81D2B757C00457795 /* Debug */,
+				CB6EBAB91D2B757C00457795 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB6EBAA61D2B757C00457795 /* Project object */;
+}

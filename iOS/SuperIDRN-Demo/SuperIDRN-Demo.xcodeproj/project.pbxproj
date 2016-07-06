@@ -7,30 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB258D4C1D2368F20002250D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB258D4B1D2368F20002250D /* main.m */; };
-		CB258D4F1D2368F20002250D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB258D4E1D2368F20002250D /* AppDelegate.m */; };
-		CB258D521D2368F20002250D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB258D511D2368F20002250D /* ViewController.m */; };
-		CB258D551D2368F20002250D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB258D531D2368F20002250D /* Main.storyboard */; };
-		CB258D571D2368F20002250D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB258D561D2368F20002250D /* Assets.xcassets */; };
-		CB258D5A1D2368F20002250D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB258D581D2368F20002250D /* LaunchScreen.storyboard */; };
-		CB258D631D236DA70002250D /* SuperIDRN.m in Sources */ = {isa = PBXBuildFile; fileRef = CB258D621D236DA70002250D /* SuperIDRN.m */; };
-		ED75CB142912596A381F497A /* libPods-SuperID-RN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3FB46B177A9564E7A11E0FF /* libPods-SuperID-RN.a */; };
+		5A95BB3593581E124B26CDFB /* libPods-SuperIDRN-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 969E59EBA65B06646E769773 /* libPods-SuperIDRN-Demo.a */; };
+		CB6EBAE71D2B77E500457795 /* libSuperIDRN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6EBAE61D2B77E500457795 /* libSuperIDRN.a */; };
+		CB6EBB611D2B839400457795 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6EBB571D2B839400457795 /* AppDelegate.m */; };
+		CB6EBB621D2B839400457795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB6EBB581D2B839400457795 /* Assets.xcassets */; };
+		CB6EBB631D2B839400457795 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB6EBB591D2B839400457795 /* LaunchScreen.storyboard */; };
+		CB6EBB641D2B839400457795 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB6EBB5B1D2B839400457795 /* Main.storyboard */; };
+		CB6EBB651D2B839400457795 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB6EBB5D1D2B839400457795 /* Info.plist */; };
+		CB6EBB661D2B839400457795 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6EBB5E1D2B839400457795 /* main.m */; };
+		CB6EBB671D2B839400457795 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6EBB601D2B839400457795 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3420B9D173A11E2F3D6C14C4 /* Pods-SuperID-RN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperID-RN.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperID-RN/Pods-SuperID-RN.release.xcconfig"; sourceTree = "<group>"; };
-		CB258D471D2368F20002250D /* SuperID-RN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SuperID-RN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB258D4B1D2368F20002250D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CB258D4D1D2368F20002250D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		CB258D4E1D2368F20002250D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CB258D501D2368F20002250D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CB258D511D2368F20002250D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CB258D541D2368F20002250D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CB258D561D2368F20002250D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CB258D591D2368F20002250D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CB258D5B1D2368F20002250D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB258D611D236DA70002250D /* SuperIDRN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuperIDRN.h; path = SuperIDRN/SuperIDRN.h; sourceTree = "<group>"; };
-		CB258D621D236DA70002250D /* SuperIDRN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SuperIDRN.m; path = SuperIDRN/SuperIDRN.m; sourceTree = "<group>"; };
+		8E189D8E97A1F31DDD5BAD75 /* Pods-SuperIDRN-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperIDRN-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperIDRN-Demo/Pods-SuperIDRN-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		969E59EBA65B06646E769773 /* libPods-SuperIDRN-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperIDRN-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C19B39BD904E1BF6E007EB36 /* Pods-SuperIDRN-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperIDRN-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperIDRN-Demo/Pods-SuperIDRN-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		CB258D471D2368F20002250D /* SuperIDRN-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SuperIDRN-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB6EBAE61D2B77E500457795 /* libSuperIDRN.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSuperIDRN.a; path = "build/Debug-iphoneos/libSuperIDRN.a"; sourceTree = "<group>"; };
+		CB6EBB561D2B839400457795 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CB6EBB571D2B839400457795 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CB6EBB581D2B839400457795 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB6EBB5A1D2B839400457795 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB6EBB5C1D2B839400457795 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB6EBB5D1D2B839400457795 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB6EBB5E1D2B839400457795 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CB6EBB5F1D2B839400457795 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CB6EBB601D2B839400457795 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E3FB46B177A9564E7A11E0FF /* libPods-SuperID-RN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperID-RN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1F272B441E71E0AC93991F4 /* Pods-SuperID-RN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperID-RN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperID-RN/Pods-SuperID-RN.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -40,7 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED75CB142912596A381F497A /* libPods-SuperID-RN.a in Frameworks */,
+				CB6EBAE71D2B77E500457795 /* libSuperIDRN.a in Frameworks */,
+				5A95BB3593581E124B26CDFB /* libPods-SuperIDRN-Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,7 +54,9 @@
 		084E00D71B665C9AE1B76956 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB6EBAE61D2B77E500457795 /* libSuperIDRN.a */,
 				E3FB46B177A9564E7A11E0FF /* libPods-SuperID-RN.a */,
+				969E59EBA65B06646E769773 /* libPods-SuperIDRN-Demo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -60,6 +66,8 @@
 			children = (
 				F1F272B441E71E0AC93991F4 /* Pods-SuperID-RN.debug.xcconfig */,
 				3420B9D173A11E2F3D6C14C4 /* Pods-SuperID-RN.release.xcconfig */,
+				C19B39BD904E1BF6E007EB36 /* Pods-SuperIDRN-Demo.debug.xcconfig */,
+				8E189D8E97A1F31DDD5BAD75 /* Pods-SuperIDRN-Demo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -67,8 +75,7 @@
 		CB258D3E1D2368F20002250D = {
 			isa = PBXGroup;
 			children = (
-				CB258D641D236DAB0002250D /* SuperIDRN */,
-				CB258D491D2368F20002250D /* SuperID-RN */,
+				CB6EBB551D2B839400457795 /* SuperIDRN-Demo */,
 				CB258D481D2368F20002250D /* Products */,
 				8BED71CE98421EB40267A4BF /* Pods */,
 				084E00D71B665C9AE1B76956 /* Frameworks */,
@@ -78,50 +85,33 @@
 		CB258D481D2368F20002250D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB258D471D2368F20002250D /* SuperID-RN.app */,
+				CB258D471D2368F20002250D /* SuperIDRN-Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CB258D491D2368F20002250D /* SuperID-RN */ = {
+		CB6EBB551D2B839400457795 /* SuperIDRN-Demo */ = {
 			isa = PBXGroup;
 			children = (
-				CB258D4D1D2368F20002250D /* AppDelegate.h */,
-				CB258D4E1D2368F20002250D /* AppDelegate.m */,
-				CB258D501D2368F20002250D /* ViewController.h */,
-				CB258D511D2368F20002250D /* ViewController.m */,
-				CB258D531D2368F20002250D /* Main.storyboard */,
-				CB258D561D2368F20002250D /* Assets.xcassets */,
-				CB258D581D2368F20002250D /* LaunchScreen.storyboard */,
-				CB258D5B1D2368F20002250D /* Info.plist */,
-				CB258D4A1D2368F20002250D /* Supporting Files */,
+				CB6EBB561D2B839400457795 /* AppDelegate.h */,
+				CB6EBB571D2B839400457795 /* AppDelegate.m */,
+				CB6EBB581D2B839400457795 /* Assets.xcassets */,
+				CB6EBB591D2B839400457795 /* LaunchScreen.storyboard */,
+				CB6EBB5B1D2B839400457795 /* Main.storyboard */,
+				CB6EBB5D1D2B839400457795 /* Info.plist */,
+				CB6EBB5E1D2B839400457795 /* main.m */,
+				CB6EBB5F1D2B839400457795 /* ViewController.h */,
+				CB6EBB601D2B839400457795 /* ViewController.m */,
 			);
-			path = "SuperID-RN";
-			sourceTree = "<group>";
-		};
-		CB258D4A1D2368F20002250D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CB258D4B1D2368F20002250D /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CB258D641D236DAB0002250D /* SuperIDRN */ = {
-			isa = PBXGroup;
-			children = (
-				CB258D611D236DA70002250D /* SuperIDRN.h */,
-				CB258D621D236DA70002250D /* SuperIDRN.m */,
-			);
-			name = SuperIDRN;
+			path = "SuperIDRN-Demo";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CB258D461D2368F20002250D /* SuperID-RN */ = {
+		CB258D461D2368F20002250D /* SuperIDRN-Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB258D5E1D2368F20002250D /* Build configuration list for PBXNativeTarget "SuperID-RN" */;
+			buildConfigurationList = CB258D5E1D2368F20002250D /* Build configuration list for PBXNativeTarget "SuperIDRN-Demo" */;
 			buildPhases = (
 				A3712AC167EC3B14A1B9DF53 /* [CP] Check Pods Manifest.lock */,
 				CB258D431D2368F20002250D /* Sources */,
@@ -134,9 +124,9 @@
 			);
 			dependencies = (
 			);
-			name = "SuperID-RN";
+			name = "SuperIDRN-Demo";
 			productName = "SuperID-RN";
-			productReference = CB258D471D2368F20002250D /* SuperID-RN.app */;
+			productReference = CB258D471D2368F20002250D /* SuperIDRN-Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -153,7 +143,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CB258D421D2368F20002250D /* Build configuration list for PBXProject "SuperID-RN" */;
+			buildConfigurationList = CB258D421D2368F20002250D /* Build configuration list for PBXProject "SuperIDRN-Demo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -166,7 +156,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CB258D461D2368F20002250D /* SuperID-RN */,
+				CB258D461D2368F20002250D /* SuperIDRN-Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -176,9 +166,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB258D5A1D2368F20002250D /* LaunchScreen.storyboard in Resources */,
-				CB258D571D2368F20002250D /* Assets.xcassets in Resources */,
-				CB258D551D2368F20002250D /* Main.storyboard in Resources */,
+				CB6EBB651D2B839400457795 /* Info.plist in Resources */,
+				CB6EBB641D2B839400457795 /* Main.storyboard in Resources */,
+				CB6EBB621D2B839400457795 /* Assets.xcassets in Resources */,
+				CB6EBB631D2B839400457795 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +188,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperID-RN/Pods-SuperID-RN-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperIDRN-Demo/Pods-SuperIDRN-Demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3712AC167EC3B14A1B9DF53 /* [CP] Check Pods Manifest.lock */ = {
@@ -227,7 +218,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperID-RN/Pods-SuperID-RN-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperIDRN-Demo/Pods-SuperIDRN-Demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -237,30 +228,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB258D521D2368F20002250D /* ViewController.m in Sources */,
-				CB258D4F1D2368F20002250D /* AppDelegate.m in Sources */,
-				CB258D631D236DA70002250D /* SuperIDRN.m in Sources */,
-				CB258D4C1D2368F20002250D /* main.m in Sources */,
+				CB6EBB671D2B839400457795 /* ViewController.m in Sources */,
+				CB6EBB661D2B839400457795 /* main.m in Sources */,
+				CB6EBB611D2B839400457795 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CB258D531D2368F20002250D /* Main.storyboard */ = {
+		CB6EBB591D2B839400457795 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CB258D541D2368F20002250D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CB258D581D2368F20002250D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB258D591D2368F20002250D /* Base */,
+				CB6EBB5A1D2B839400457795 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CB6EBB5B1D2B839400457795 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB6EBB5C1D2B839400457795 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -350,12 +340,16 @@
 		};
 		CB258D5F1D2368F20002250D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1F272B441E71E0AC93991F4 /* Pods-SuperID-RN.debug.xcconfig */;
+			baseConfigurationReference = C19B39BD904E1BF6E007EB36 /* Pods-SuperIDRN-Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "SuperID-RN/Info.plist";
+				INFOPLIST_FILE = "SuperIDRN-Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.ReactNativeSuperID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -363,12 +357,16 @@
 		};
 		CB258D601D2368F20002250D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3420B9D173A11E2F3D6C14C4 /* Pods-SuperID-RN.release.xcconfig */;
+			baseConfigurationReference = 8E189D8E97A1F31DDD5BAD75 /* Pods-SuperIDRN-Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "SuperID-RN/Info.plist";
+				INFOPLIST_FILE = "SuperIDRN-Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.ReactNativeSuperID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -377,7 +375,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CB258D421D2368F20002250D /* Build configuration list for PBXProject "SuperID-RN" */ = {
+		CB258D421D2368F20002250D /* Build configuration list for PBXProject "SuperIDRN-Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB258D5C1D2368F20002250D /* Debug */,
@@ -386,7 +384,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB258D5E1D2368F20002250D /* Build configuration list for PBXNativeTarget "SuperID-RN" */ = {
+		CB258D5E1D2368F20002250D /* Build configuration list for PBXNativeTarget "SuperIDRN-Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB258D5F1D2368F20002250D /* Debug */,

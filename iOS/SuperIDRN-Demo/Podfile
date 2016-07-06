@@ -1,11 +1,12 @@
 # Uncomment this line to define a global platform for your project
 platform :ios, '8.0'
+project 'SuperIDRN-Demo.xcodeproj'
 
-target 'SuperID-RN' do
+target 'SuperIDRN-Demo' do
 
-pod "SuperID"
+pod 'SuperIDRN', :path => '../'
 
-pod 'React', :path => '../node_modules/react-native', :subspecs => [
+pod 'React', :path => '../../node_modules/react-native', :subspecs => [
   'Core',
   'RCTImage',
   'RCTNetwork',
