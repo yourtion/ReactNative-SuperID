@@ -1,13 +1,13 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
   TouchableHighlight,
-  ToastAndroid
+  ToastAndroid
 } from 'react-native';
 
 const superID = require('react-native').NativeModules.SuperIDRN;
@@ -18,12 +18,12 @@ class SimpleApp extends Component {
 
   constructor(props) {
     super(props);
-  
+
     this.state = {};
     superID.version().then((ret) => {
       this.setState({version: `version: ${ret.version} build: ${ret.build}`});
     }).catch(console.log);
-    
+
   }
 
   async _login() {
@@ -76,25 +76,25 @@ class SimpleApp extends Component {
           {this.state.info}
         </Text>
 
-          <View style={styles.box}>
-            <TouchableHighlight
-              style={styles.button}
-              onPress={this._login.bind(this)}>
-              <Text style={styles.buttonText}>Login</Text>
-            </TouchableHighlight>
+        <View style={styles.box}>
+          <TouchableHighlight
+            style={styles.button}
+            onPress={this._login.bind(this)}>
+            <Text style={styles.buttonText}>Login</Text>
+          </TouchableHighlight>
 
-            <TouchableHighlight
-              style={styles.button}
-              onPress={this._verify.bind(this)}>
-              <Text style={styles.buttonText}>Verify</Text>
-            </TouchableHighlight>
+          <TouchableHighlight
+            style={styles.button}
+            onPress={this._verify.bind(this)}>
+            <Text style={styles.buttonText}>Verify</Text>
+          </TouchableHighlight>
 
-            <TouchableHighlight
-              style={styles.button}
-              onPress={this._faceFeature.bind(this)}>
-              <Text style={styles.buttonText}>FaceFeature</Text>
-            </TouchableHighlight>
-          </View>
+          <TouchableHighlight
+            style={styles.button}
+            onPress={this._faceFeature.bind(this)}>
+            <Text style={styles.buttonText}>FaceFeature</Text>
+          </TouchableHighlight>
+        </View>
       </View>
     );
   }
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   box: {
-    flexDirection:'row',
+    flexDirection: 'row',
   },
   button: {
     margin: 5,

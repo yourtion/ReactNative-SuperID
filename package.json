@@ -1,17 +1,28 @@
 {
   "name": "superid-react-native",
-  "version": "1.0.0",
-  "description": "SuperID SDK in ReactNative",
-  "main": "index.js",
-  "scripts": {
-    "start": "(JS_DIR=`pwd`/ReactComponent; cd node_modules/react-native; npm run start -- --root $JS_DIR)",
-    "init": "cd iOS && pod install",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Yourtion <yourtion@gmail.com>",
+  "version": "0.2.0",
+  "description": "SuperID SDK in ReactNative",
   "license": "MIT",
-  "dependencies": {
-    "react": "^15.1.0",
-    "react-native": "^0.28.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourtion/ReactNative-SuperID.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourtion/ReactNative-SuperID/issues"
+  },
+  "homepage": "https://github.com/yourtion/ReactNative-SuperID#readme",
+  "keywords": [
+    "SuperID",
+    "facelogin",
+    "react",
+    "react-native"
+  ],
+  "scripts": {
+    "start": "(JS_DIR=`pwd`/example; cd node_modules/react-native; npm run start -- --root $JS_DIR)",
+    "pod": "cd iOS/SuperIDRN-Demo && pod install"
+  },
+  "peerDependencies": {
+    "react-native": "*"
   }
 }
