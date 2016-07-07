@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/Android.iml" filepath="$PROJECT_DIR$/Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/SuperIDRN/SuperIDRN.iml" filepath="$PROJECT_DIR$/SuperIDRN/SuperIDRN.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SuperIDRN/sidrn.iml" filepath="$PROJECT_DIR$/SuperIDRN/sidrn.iml" />
     </modules>
   </component>
 </project>
