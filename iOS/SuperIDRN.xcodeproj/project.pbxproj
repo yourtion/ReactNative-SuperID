@@ -7,54 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB6EBAB21D2B757C00457795 /* SuperIDRN.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB6EBAB11D2B757C00457795 /* SuperIDRN.h */; };
-		CB6EBAB41D2B757C00457795 /* SuperIDRN.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6EBAB31D2B757C00457795 /* SuperIDRN.m */; };
-		CB6EBB521D2B7EAA00457795 /* libSuperIDSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6EBB4A1D2B7EAA00457795 /* libSuperIDSDK.a */; };
+		CB2732011D2F4642000A7F35 /* libSuperIDSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2731F91D2F4642000A7F35 /* libSuperIDSDK.a */; };
+		CB2732021D2F4642000A7F35 /* SIDCameraPreviewView.h in Headers */ = {isa = PBXBuildFile; fileRef = CB2731FA1D2F4642000A7F35 /* SIDCameraPreviewView.h */; };
+		CB2732031D2F4642000A7F35 /* SIDFaceFeatureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CB2731FB1D2F4642000A7F35 /* SIDFaceFeatureViewController.h */; };
+		CB2732041D2F4642000A7F35 /* SIDImageFilterCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = CB2731FC1D2F4642000A7F35 /* SIDImageFilterCommon.h */; };
+		CB2732051D2F4642000A7F35 /* SIDMutilpleCameraManagerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CB2731FD1D2F4642000A7F35 /* SIDMutilpleCameraManagerViewController.h */; };
+		CB2732061D2F4642000A7F35 /* SuperID.h in Headers */ = {isa = PBXBuildFile; fileRef = CB2731FE1D2F4642000A7F35 /* SuperID.h */; };
+		CB2732071D2F4642000A7F35 /* SuperIDDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CB2731FF1D2F4642000A7F35 /* SuperIDDelegate.h */; };
+		CB2732081D2F4642000A7F35 /* SuperIDSDKSettings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB2732001D2F4642000A7F35 /* SuperIDSDKSettings.bundle */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		CB6EBAAC1D2B757C00457795 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				CB6EBAB21D2B757C00457795 /* SuperIDRN.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		CB6EBAAE1D2B757C00457795 /* libSuperIDRN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSuperIDRN.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB2731F01D2F4611000A7F35 /* SuperIDRN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperIDRN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB2731F41D2F4611000A7F35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SuperIDRN/Info.plist; sourceTree = "<group>"; };
+		CB2731F91D2F4642000A7F35 /* libSuperIDSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuperIDSDK.a; sourceTree = "<group>"; };
+		CB2731FA1D2F4642000A7F35 /* SIDCameraPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDCameraPreviewView.h; sourceTree = "<group>"; };
+		CB2731FB1D2F4642000A7F35 /* SIDFaceFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDFaceFeatureViewController.h; sourceTree = "<group>"; };
+		CB2731FC1D2F4642000A7F35 /* SIDImageFilterCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDImageFilterCommon.h; sourceTree = "<group>"; };
+		CB2731FD1D2F4642000A7F35 /* SIDMutilpleCameraManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDMutilpleCameraManagerViewController.h; sourceTree = "<group>"; };
+		CB2731FE1D2F4642000A7F35 /* SuperID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperID.h; sourceTree = "<group>"; };
+		CB2731FF1D2F4642000A7F35 /* SuperIDDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIDDelegate.h; sourceTree = "<group>"; };
+		CB2732001D2F4642000A7F35 /* SuperIDSDKSettings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SuperIDSDKSettings.bundle; sourceTree = "<group>"; };
 		CB6EBAB11D2B757C00457795 /* SuperIDRN.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperIDRN.h; sourceTree = "<group>"; };
 		CB6EBAB31D2B757C00457795 /* SuperIDRN.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperIDRN.m; sourceTree = "<group>"; };
-		CB6EBB4A1D2B7EAA00457795 /* libSuperIDSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuperIDSDK.a; sourceTree = "<group>"; };
-		CB6EBB4B1D2B7EAA00457795 /* SIDCameraPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDCameraPreviewView.h; sourceTree = "<group>"; };
-		CB6EBB4C1D2B7EAA00457795 /* SIDFaceFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDFaceFeatureViewController.h; sourceTree = "<group>"; };
-		CB6EBB4D1D2B7EAA00457795 /* SIDImageFilterCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDImageFilterCommon.h; sourceTree = "<group>"; };
-		CB6EBB4E1D2B7EAA00457795 /* SIDMutilpleCameraManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDMutilpleCameraManagerViewController.h; sourceTree = "<group>"; };
-		CB6EBB4F1D2B7EAA00457795 /* SuperID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperID.h; sourceTree = "<group>"; };
-		CB6EBB501D2B7EAA00457795 /* SuperIDDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIDDelegate.h; sourceTree = "<group>"; };
-		CB6EBB511D2B7EAA00457795 /* SuperIDSDKSettings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SuperIDSDKSettings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CB6EBAAB1D2B757C00457795 /* Frameworks */ = {
+		CB2731EC1D2F4611000A7F35 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB6EBB521D2B7EAA00457795 /* libSuperIDSDK.a in Frameworks */,
+				CB2732011D2F4642000A7F35 /* libSuperIDSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB2731F81D2F4642000A7F35 /* SuperID-SDK-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB2731F91D2F4642000A7F35 /* libSuperIDSDK.a */,
+				CB2731FA1D2F4642000A7F35 /* SIDCameraPreviewView.h */,
+				CB2731FB1D2F4642000A7F35 /* SIDFaceFeatureViewController.h */,
+				CB2731FC1D2F4642000A7F35 /* SIDImageFilterCommon.h */,
+				CB2731FD1D2F4642000A7F35 /* SIDMutilpleCameraManagerViewController.h */,
+				CB2731FE1D2F4642000A7F35 /* SuperID.h */,
+				CB2731FF1D2F4642000A7F35 /* SuperIDDelegate.h */,
+				CB2732001D2F4642000A7F35 /* SuperIDSDKSettings.bundle */,
+			);
+			name = "SuperID-SDK-iOS";
+			path = "SuperIDRN/SuperID-SDK-iOS";
+			sourceTree = "<group>";
+		};
 		CB6EBAA51D2B757C00457795 = {
 			isa = PBXGroup;
 			children = (
-				CB6EBB491D2B7EAA00457795 /* SuperID-SDK-iOS */,
+				CB2731F41D2F4611000A7F35 /* Info.plist */,
+				CB2731F81D2F4642000A7F35 /* SuperID-SDK-iOS */,
 				CB6EBAB01D2B757C00457795 /* SuperIDRN */,
 				CB6EBAAF1D2B757C00457795 /* Products */,
 			);
@@ -63,7 +73,7 @@
 		CB6EBAAF1D2B757C00457795 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB6EBAAE1D2B757C00457795 /* libSuperIDRN.a */,
+				CB2731F01D2F4611000A7F35 /* SuperIDRN.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,32 +87,33 @@
 			path = SuperIDRN;
 			sourceTree = "<group>";
 		};
-		CB6EBB491D2B7EAA00457795 /* SuperID-SDK-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CB6EBB4A1D2B7EAA00457795 /* libSuperIDSDK.a */,
-				CB6EBB4B1D2B7EAA00457795 /* SIDCameraPreviewView.h */,
-				CB6EBB4C1D2B7EAA00457795 /* SIDFaceFeatureViewController.h */,
-				CB6EBB4D1D2B7EAA00457795 /* SIDImageFilterCommon.h */,
-				CB6EBB4E1D2B7EAA00457795 /* SIDMutilpleCameraManagerViewController.h */,
-				CB6EBB4F1D2B7EAA00457795 /* SuperID.h */,
-				CB6EBB501D2B7EAA00457795 /* SuperIDDelegate.h */,
-				CB6EBB511D2B7EAA00457795 /* SuperIDSDKSettings.bundle */,
-			);
-			name = "SuperID-SDK-iOS";
-			path = "SuperIDRN/SuperID-SDK-iOS";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		CB2731ED1D2F4611000A7F35 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB2732031D2F4642000A7F35 /* SIDFaceFeatureViewController.h in Headers */,
+				CB2732051D2F4642000A7F35 /* SIDMutilpleCameraManagerViewController.h in Headers */,
+				CB2732021D2F4642000A7F35 /* SIDCameraPreviewView.h in Headers */,
+				CB2732041D2F4642000A7F35 /* SIDImageFilterCommon.h in Headers */,
+				CB2732061D2F4642000A7F35 /* SuperID.h in Headers */,
+				CB2732071D2F4642000A7F35 /* SuperIDDelegate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		CB6EBAAD1D2B757C00457795 /* SuperIDRN */ = {
+		CB2731EF1D2F4611000A7F35 /* SuperIDRN */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB6EBAB71D2B757C00457795 /* Build configuration list for PBXNativeTarget "SuperIDRN" */;
+			buildConfigurationList = CB2731F51D2F4611000A7F35 /* Build configuration list for PBXNativeTarget "SuperIDRN" */;
 			buildPhases = (
-				CB6EBAAA1D2B757C00457795 /* Sources */,
-				CB6EBAAB1D2B757C00457795 /* Frameworks */,
-				CB6EBAAC1D2B757C00457795 /* CopyFiles */,
+				CB2731EB1D2F4611000A7F35 /* Sources */,
+				CB2731EC1D2F4611000A7F35 /* Frameworks */,
+				CB2731ED1D2F4611000A7F35 /* Headers */,
+				CB2731EE1D2F4611000A7F35 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -110,8 +121,8 @@
 			);
 			name = SuperIDRN;
 			productName = SuperIDRN;
-			productReference = CB6EBAAE1D2B757C00457795 /* libSuperIDRN.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = CB2731F01D2F4611000A7F35 /* SuperIDRN.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -122,7 +133,7 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Yourtion;
 				TargetAttributes = {
-					CB6EBAAD1D2B757C00457795 = {
+					CB2731EF1D2F4611000A7F35 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -139,23 +150,81 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CB6EBAAD1D2B757C00457795 /* SuperIDRN */,
+				CB2731EF1D2F4611000A7F35 /* SuperIDRN */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		CB2731EE1D2F4611000A7F35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB2732081D2F4642000A7F35 /* SuperIDSDKSettings.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		CB6EBAAA1D2B757C00457795 /* Sources */ = {
+		CB2731EB1D2F4611000A7F35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB6EBAB41D2B757C00457795 /* SuperIDRN.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		CB2731F61D2F4611000A7F35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SuperIDRN/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SuperIDRN/SuperID-SDK-iOS",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.SuperIDRN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CB2731F71D2F4611000A7F35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SuperIDRN/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SuperIDRN/SuperID-SDK-iOS",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.SuperIDRN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		CB6EBAB51D2B757C00457795 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -238,55 +307,23 @@
 			};
 			name = Release;
 		};
-		CB6EBAB81D2B757C00457795 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../node_modules/react-native/React/**",
-					"$(SRCROOT)/../../react-native/React/**",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/SuperIDRN/SuperID-SDK-iOS",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		CB6EBAB91D2B757C00457795 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../node_modules/react-native/React/**",
-					"$(SRCROOT)/../../react-native/React/**",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/SuperIDRN/SuperID-SDK-iOS",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CB2731F51D2F4611000A7F35 /* Build configuration list for PBXNativeTarget "SuperIDRN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB2731F61D2F4611000A7F35 /* Debug */,
+				CB2731F71D2F4611000A7F35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CB6EBAA91D2B757C00457795 /* Build configuration list for PBXProject "SuperIDRN" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB6EBAB51D2B757C00457795 /* Debug */,
 				CB6EBAB61D2B757C00457795 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CB6EBAB71D2B757C00457795 /* Build configuration list for PBXNativeTarget "SuperIDRN" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CB6EBAB81D2B757C00457795 /* Debug */,
-				CB6EBAB91D2B757C00457795 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5A95BB3593581E124B26CDFB /* libPods-SuperIDRN-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 969E59EBA65B06646E769773 /* libPods-SuperIDRN-Demo.a */; };
-		CB6EBAE71D2B77E500457795 /* libSuperIDRN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6EBAE61D2B77E500457795 /* libSuperIDRN.a */; };
+		CB27320C1D2F4714000A7F35 /* SuperIDRN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB27320B1D2F4714000A7F35 /* SuperIDRN.framework */; };
+		CB27320D1D2F4714000A7F35 /* SuperIDRN.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB27320B1D2F4714000A7F35 /* SuperIDRN.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CB6EBB611D2B839400457795 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6EBB571D2B839400457795 /* AppDelegate.m */; };
 		CB6EBB621D2B839400457795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB6EBB581D2B839400457795 /* Assets.xcassets */; };
 		CB6EBB631D2B839400457795 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB6EBB591D2B839400457795 /* LaunchScreen.storyboard */; };
@@ -18,12 +19,28 @@
 		CB6EBB671D2B839400457795 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6EBB601D2B839400457795 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CB27320E1D2F4715000A7F35 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CB27320D1D2F4714000A7F35 /* SuperIDRN.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3420B9D173A11E2F3D6C14C4 /* Pods-SuperID-RN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperID-RN.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperID-RN/Pods-SuperID-RN.release.xcconfig"; sourceTree = "<group>"; };
 		8E189D8E97A1F31DDD5BAD75 /* Pods-SuperIDRN-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperIDRN-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperIDRN-Demo/Pods-SuperIDRN-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		969E59EBA65B06646E769773 /* libPods-SuperIDRN-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperIDRN-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19B39BD904E1BF6E007EB36 /* Pods-SuperIDRN-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperIDRN-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperIDRN-Demo/Pods-SuperIDRN-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		CB258D471D2368F20002250D /* SuperIDRN-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SuperIDRN-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB2732091D2F46F5000A7F35 /* SuperIDRN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SuperIDRN.framework; path = "../build/Debug-iphoneos/SuperIDRN.framework"; sourceTree = "<group>"; };
+		CB27320B1D2F4714000A7F35 /* SuperIDRN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = SuperIDRN.framework; path = "/Users/Yourtion/Library/Developer/Xcode/DerivedData/SuperIDRN-Demo-eaxjaxholukgmufmxntongnganly/Build/Products/Debug-iphoneos/SuperIDRN.framework"; sourceTree = "<absolute>"; };
 		CB6EBAE61D2B77E500457795 /* libSuperIDRN.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSuperIDRN.a; path = "build/Debug-iphoneos/libSuperIDRN.a"; sourceTree = "<group>"; };
 		CB6EBB561D2B839400457795 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CB6EBB571D2B839400457795 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB6EBAE71D2B77E500457795 /* libSuperIDRN.a in Frameworks */,
+				CB27320C1D2F4714000A7F35 /* SuperIDRN.framework in Frameworks */,
 				5A95BB3593581E124B26CDFB /* libPods-SuperIDRN-Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,6 +71,7 @@
 		084E00D71B665C9AE1B76956 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB2732091D2F46F5000A7F35 /* SuperIDRN.framework */,
 				CB6EBAE61D2B77E500457795 /* libSuperIDRN.a */,
 				E3FB46B177A9564E7A11E0FF /* libPods-SuperID-RN.a */,
 				969E59EBA65B06646E769773 /* libPods-SuperIDRN-Demo.a */,
@@ -75,6 +93,7 @@
 		CB258D3E1D2368F20002250D = {
 			isa = PBXGroup;
 			children = (
+				CB27320B1D2F4714000A7F35 /* SuperIDRN.framework */,
 				CB6EBB551D2B839400457795 /* SuperIDRN-Demo */,
 				CB258D481D2368F20002250D /* Products */,
 				8BED71CE98421EB40267A4BF /* Pods */,
@@ -119,6 +138,7 @@
 				CB258D451D2368F20002250D /* Resources */,
 				9CDEEAA6FFEB6F067416DBE4 /* [CP] Embed Pods Frameworks */,
 				AD88BDEB0D075DBF4FCDC188 /* [CP] Copy Pods Resources */,
+				CB27320E1D2F4715000A7F35 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
