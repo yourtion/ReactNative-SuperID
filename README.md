@@ -10,7 +10,7 @@ npm i --save superid-react-native
 
 ### Configure your React Native Application
 
-**on iOS:**
+#### iOS
 
 Cocapods:
 
@@ -18,7 +18,7 @@ Cocapods:
 pod 'SuperIDRN', :path => './node_modules/superid-react-native/iOS'
 ```
 
-**on Android:**
+#### Android
 
 1. `android/settings.gradle`:: Add the following snippet
 
