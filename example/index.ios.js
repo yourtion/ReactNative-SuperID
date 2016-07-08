@@ -31,6 +31,7 @@ class SimpleApp extends Component {
       const ret = await superID.login();
       if (ret !== null) {
         this.setState({info: `User: ${ret.userInfo.name}  Phone: ${ret.userInfo.phone}`});
+        this.openId = ret.openId;
       }
     } catch (error) {
       console.log(error);
@@ -46,6 +47,32 @@ class SimpleApp extends Component {
       }
     } catch (error) {
       this.setState({info: 'Please Login first!'});
+    }
+  }
+
+  async _userState() {
+    try {
+      const ret = await superID.userState(this.openId);
+      if (ret !== null) {
+        console.log(ret);
+        const result = ret ? 'HasAuth !' : 'NoAuth !'
+        this.setState({info: result});
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async _cancelAuth() {
+    try {
+      const ret = await superID.cancelAuth();
+      if (ret !== null) {
+        console.log(ret);
+        const result = ret ? 'Canceled !' : 'Error '
+        this.setState({info: result});
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -94,7 +121,24 @@ class SimpleApp extends Component {
             onPress={this._faceFeature.bind(this)}>
             <Text style={styles.buttonText}>FaceFeature</Text>
           </TouchableHighlight>
+
         </View>
+
+        <View style={styles.box}>
+
+          <TouchableHighlight
+            style={styles.button}
+            onPress={this._userState.bind(this)}>
+            <Text style={styles.buttonText}>UserState</Text>
+          </TouchableHighlight>
+
+          <TouchableHighlight
+            style={styles.button}
+            onPress={this._cancelAuth.bind(this)}>
+            <Text style={styles.buttonText}>CancelAuth</Text>
+          </TouchableHighlight>
+        </View>
+        
       </View>
     );
   }

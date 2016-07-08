@@ -101,6 +101,40 @@ RCT_REMAP_METHOD(login,
     
 }
 
+RCT_REMAP_METHOD(userState,
+                 queryCurrentUserAuthorizationStateWithOpenId:(NSString *)openId
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    if (![self checkStatus:reject]) return;
+    if (!openId) return reject(EC_ERROR, @"parameter error", nil);
+    
+    _isRuning = YES;
+    _resolve = resolve;
+    _reject = reject;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[SuperID sharedInstance] queryCurrentUserAuthorizationStateWithOpenId:openId];
+    });
+    
+}
+
+RCT_REMAP_METHOD(cancelAuth,
+                 userCancelAuthorizationRresolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    if (![self checkStatus:reject]) return;
+    
+    _isRuning = YES;
+    _resolve = resolve;
+    _reject = reject;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[SuperID sharedInstance] userCancelAuthorization];
+    });
+    
+}
+
 RCT_EXPORT_METHOD(logout)
 {
     [[SuperID sharedInstance] appUserLogoutCurrentAccount];
@@ -198,8 +232,9 @@ RCT_REMAP_METHOD(authState,
 - (void)superID:(SuperID *)sender userDidFinishCancelAuthorization:(NSError *)error {
     if (_isRuning && _resolve && _reject) {
         if (error) {
-            _reject(EC_ERROR, error.description, nil);
+            return _reject(EC_ERROR, error.description, nil);
         }
+        _resolve(@YES);
         [self cleanRuning];
     }
 }
