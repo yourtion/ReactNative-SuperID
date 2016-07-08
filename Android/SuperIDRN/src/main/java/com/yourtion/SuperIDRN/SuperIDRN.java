@@ -91,6 +91,63 @@ public class SuperIDRN extends ReactContextBaseJavaModule implements ActivityEve
     }
 
     @ReactMethod
+    public void userState(String openId, final Promise promise) {
+        if (!checkStatus(promise)) return;
+        Activity activity = getCurrentActivity();
+        if (activity != null) {
+            if (openId == null ) {
+                promise.reject("error", "parameter error");
+                return;
+            }
+            SuperID.isOpenIDAuthorized(activity, openId, new SuperID.IntSuccessCallback() {
+                @Override
+                public void onSuccess(int result) {
+                    switch (result) {
+                        case SDKConfig.ISAUTHORIZED:
+                            promise.resolve(true);
+                            break;
+                        case SDKConfig.NOAUTHORIZED:
+                            promise.resolve(false);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }, new SuperID.IntFailCallback() {
+                @Override
+                public void onFail(int error) {
+                    String result = "State: " + error + " .Please try again";
+                    promise.reject("error", result);
+                }
+            });
+        } else {
+            promise.reject("error", "Activity is null");
+        }
+    }
+
+    @ReactMethod
+    public void cancelAuth(final Promise promise) {
+        if (!checkStatus(promise)) return;
+        Activity activity = getCurrentActivity();
+        if (activity != null) {
+            SuperID.userCancelAuthorization(activity, new SuperID.IntSuccessCallback() {
+                @Override
+                public void onSuccess(int result) {
+                    promise.resolve(true);
+                }
+            }, new SuperID.IntFailCallback() {
+                @Override
+                public void onFail(int error) {
+                    String result = "State: " + error + " .Please try again";
+                    promise.reject("error", result);
+                }
+            });
+        } else {
+            promise.reject("error", "Activity is null");
+        }
+    }
+
+    @ReactMethod
     public void logout() {
         Activity activity = getCurrentActivity();
         if (activity != null) {
