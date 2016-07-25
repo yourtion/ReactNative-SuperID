@@ -1,13 +1,13 @@
 PODS:
-  - React/Core (0.29.0)
-  - React/RCTImage (0.29.0):
+  - React/Core (0.30.0)
+  - React/RCTImage (0.30.0):
     - React/Core
     - React/RCTNetwork
-  - React/RCTNetwork (0.29.0):
+  - React/RCTNetwork (0.30.0):
     - React/Core
-  - React/RCTText (0.29.0):
+  - React/RCTText (0.30.0):
     - React/Core
-  - React/RCTWebSocket (0.29.0):
+  - React/RCTWebSocket (0.30.0):
     - React/Core
   - SuperIDRN (0.1.0)
 
@@ -26,7 +26,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  React: 2295aaed0bcaa7a0dd847504e0caa0d3b3f23305
+  React: ed499ad8bb72560821a80fefa59e15a18f3ec75c
   SuperIDRN: 52638edd7e66cd8759d731762e9c5f99637ed73b
 
 PODFILE CHECKSUM: bcd2cf303951ad1408423eeeba83f7d58e6f942f

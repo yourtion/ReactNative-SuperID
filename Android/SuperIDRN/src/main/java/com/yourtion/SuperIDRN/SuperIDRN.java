@@ -34,6 +34,10 @@ public class SuperIDRN extends ReactContextBaseJavaModule implements ActivityEve
         mPromise = null;
     }
 
+    @Override
+    public void onNewIntent(Intent intent) {
+    }
+
     private void cleanRunning() {
         isRunning = false;
         mPromise = null;
