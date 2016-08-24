@@ -10,6 +10,12 @@ npm i --save superid-react-native
 
 ### Configure your React Native Application
 
+#### Mostly automatic install with react-native
+
+```
+react-native link  superid-react-native
+```
+
 #### iOS
 
 Cocapods:
@@ -17,6 +23,8 @@ Cocapods:
 ```ruby
 pod 'SuperIDRN', :path => './node_modules/superid-react-native/iOS'
 ```
+
+Run `pod install`
 
 #### Android
 

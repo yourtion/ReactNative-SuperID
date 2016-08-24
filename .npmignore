@@ -28,13 +28,17 @@ DerivedData
 node_modules/
 npm-debug.log
 
-# android
-#
-android/build/
-android/.gradle/
-android/.idea/
-android/android.iml
-android/gradle/
-android/gradlew
-android/gradlew.bat
-android/local.properties
+# Android
+
+Android/build/
+Android/.gradle/
+Android/.idea/
+Android/Android.iml
+Android/gradle/
+Android/gradlew
+Android/gradlew.bat
+Android/local.properties
+
+# Demos
+iOS/SuperIDRN-Demo/
+Android/app/
