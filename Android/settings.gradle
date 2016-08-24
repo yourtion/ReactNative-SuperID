@@ -1,1 +1,1 @@
-include ':app', ':SuperIDRN'
+include ':superidrn'
