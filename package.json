@@ -1,7 +1,7 @@
 {
   "name": "superid-react-native",
   "author": "Yourtion <yourtion@gmail.com>",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "SuperID SDK in ReactNative",
   "license": "MIT",
   "main": "src/index.js",
@@ -24,6 +24,6 @@
     "pod": "cd iOS/SuperIDRN-Demo && pod install"
   },
   "peerDependencies": {
-    "react-native": "*"
+    "react-native": ">= 0.30"
   }
 }

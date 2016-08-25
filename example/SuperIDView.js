@@ -8,7 +8,8 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-const superID = require('../');
+// const superID = require('../');
+const superID = require('superid-react-native');
 superID.debug(true);
 superID.registe('EKsrdtS3p67n4hAGtqUx2dpO', 'bgUip4gieeBYoLJnI9beN5XK');
 
