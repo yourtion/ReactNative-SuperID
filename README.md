@@ -44,7 +44,7 @@ compile project(':SuperIDRN')
 3. in your `MainActivity` (or equivalent) the SIDRNPackage needs to be added. Add the import at the top:
 
 ```java
-import com.projectseptember.SuperIDRN.SIDRNPackage;
+import com.yourtion.SuperIDRN.SIDRNPackage;;
 ```
 
 4. In order for React Native to use the package, add it the packages inside of the class extending ReactActivity.
