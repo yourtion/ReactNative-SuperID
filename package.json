@@ -1,7 +1,7 @@
 {
   "name": "superid-react-native",
   "author": "Yourtion <yourtion@gmail.com>",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "SuperID SDK in ReactNative",
   "license": "MIT",
   "main": "src/index.js",
