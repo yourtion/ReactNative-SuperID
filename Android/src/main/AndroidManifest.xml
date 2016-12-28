@@ -34,49 +34,49 @@
         
     <activity
             android:name="com.isnc.facesdk.aty.Aty_FaceDetect"
-            android:label="@string/app_name"
+            android:label="SuperID"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar">
         </activity>
         <activity
             android:name="com.isnc.facesdk.aty.Aty_NormalFaceDetect"
-            android:label="@string/app_name"
+            android:label="SuperID"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar">
         </activity>
         <activity
             android:name="com.isnc.facesdk.aty.Aty_AgreeItem"
-            android:label="@string/app_name"
+            android:label="SuperID"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar">
         </activity>
         <activity
             android:name="com.isnc.facesdk.aty.Aty_Auth"
-            android:label="@string/app_name"
+            android:label="SuperID"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar">
         </activity>
         <activity
             android:name="com.isnc.facesdk.aty.Aty_EditUserinfo"
-            android:label="@string/app_name"
+            android:label="SuperID"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar">
         </activity>
         <activity
             android:name="com.isnc.facesdk.aty.Aty_ClipPicture"
-            android:label="@string/app_name"
+            android:label="SuperID"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar">
         </activity>
         <activity
             android:name="com.isnc.facesdk.aty.Aty_CountryPage"
-            android:label="@string/app_name"
+            android:label="SuperID"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar">
         </activity>
         <activity
             android:name="com.isnc.facesdk.aty.Aty_SecureEmail"
-            android:label="@string/app_name"
+            android:label="SuperID"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar">
         </activity>

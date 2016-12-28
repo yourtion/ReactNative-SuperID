@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by Yourtion on 7/5/16.
  */
-public class SIDRNPackage implements ReactPackage {
+public class SuperIDRNPackage implements ReactPackage {
 
     @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
